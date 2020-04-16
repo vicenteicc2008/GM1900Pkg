@@ -5,6 +5,7 @@ Attempt to transplant EDK2 UEFI to Oneplus 7, however, it's still in initial pha
 You can build this project yourself and temporarily boot it. Below are the instructions:
 
 ```
+apt install build-essentials python iasl -y
 cd edk2-gm1900
 chmod a+x ./*
 ./build.sh

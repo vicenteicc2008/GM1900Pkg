@@ -147,8 +147,9 @@ READ_LOCK_STATUS   = TRUE
   #
   INF EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
 
-  INF GM1900/GM1900Dxe/GM1900Dxe.inf
-  INF GM1900/SimpleFbDxe/SimpleFbDxe.inf
+  INF GM1900/Drivers/GM1900Dxe/GM1900Dxe.inf
+  INF GM1900/Drivers/SimpleFbDxe/SimpleFbDxe.inf
+  INF GM1900/Drivers/LogoDxe/LogoDxe.inf
 
 
   #

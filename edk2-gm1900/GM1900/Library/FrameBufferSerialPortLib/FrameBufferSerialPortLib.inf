@@ -1,0 +1,30 @@
+[Defines]
+  INF_VERSION    = 0x00010005
+  BASE_NAME      = FrameBufferSerialPortLib
+  MODULE_TYPE    = BASE
+  VERSION_STRING = 1.0
+  LIBRARY_CLASS  = SerialPortLib
+
+[Sources.common]
+  FrameBufferSerialPortLib.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  ArmPkg/ArmPkg.dec
+  GM1900/GM1900.dec
+
+[LibraryClasses]
+  ArmLib
+  PcdLib
+  IoLib
+  HobLib
+  CompilerIntrinsicsLib
+  CacheMaintenanceLib
+
+[Pcd]
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferAddress
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferWidth
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferHeight
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferPixelBpp
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferVisibleWidth
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferVisibleHeight
