@@ -45,6 +45,6 @@
   gGM1900TokenSpaceGuid.PcdMipiFrameBufferAddress|0x00400000|UINT32|0x0000a400
   gGM1900TokenSpaceGuid.PcdMipiFrameBufferWidth|1080|UINT32|0x0000a401
   gGM1900TokenSpaceGuid.PcdMipiFrameBufferHeight|2340|UINT32|0x0000a402
-  gGM1900TokenSpaceGuid.PcdMipiFrameBufferPixelBpp|32|UINT32|0x0000a403
+  gGM1900TokenSpaceGuid.PcdMipiFrameBufferPixelBpp|64|UINT32|0x0000a403
   gGM1900TokenSpaceGuid.PcdMipiFrameBufferVisibleWidth|1080|UINT32|0x0000a404
   gGM1900TokenSpaceGuid.PcdMipiFrameBufferVisibleHeight|2340|UINT32|0x0000a405
