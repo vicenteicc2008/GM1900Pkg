@@ -134,7 +134,7 @@ RelocateImageUnder4GIfNeeded (
   DEBUG ((DEBUG_INFO, "Loading driver at 0x%08x EntryPoint=0x%08x\n", (UINTN)ImageContext.ImageAddress, (UINTN)ImageContext.EntryPoint));
   Status = ((EFI_IMAGE_ENTRY_POINT)(UINTN)(ImageContext.EntryPoint)) (NewImageHandle, gST);
   if (EFI_ERROR (Status)) {
-    DEBUG ((DEBUG_ERROR, "Error: Image at 0x%08x start failed: %r\n", ImageContext.ImageAddress, Status));
+    DEBUG ((DEBUG_ERROR, "Error: Image at 0x%08x EntryPoint=0x%08x start failed: %r\n", ImageContext.ImageAddress,(UINTN)ImageContext.EntryPoint , Status));
     gBS->FreePages (FfsBuffer, Pages);
   }
 

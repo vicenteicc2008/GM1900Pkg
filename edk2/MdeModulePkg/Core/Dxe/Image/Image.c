@@ -1660,6 +1660,9 @@ CoreStartImage (
     //
     DEBUG_CODE_BEGIN ();
       if (EFI_ERROR (Image->Status)) {
+        DEBUG ((DEBUG_ERROR, "Dummy 1\n"));
+        DEBUG ((DEBUG_ERROR, "Dummy 2\n"));
+        DEBUG ((DEBUG_ERROR, "Dummy 3\n"));
         DEBUG ((DEBUG_ERROR, "Error: Image at %11p start failed: %r\n", Image->Info.ImageBase, Image->Status));
       }
     DEBUG_CODE_END ();

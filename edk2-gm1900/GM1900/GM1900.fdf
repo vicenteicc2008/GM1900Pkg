@@ -105,7 +105,35 @@ READ_LOCK_CAP      = TRUE
 READ_LOCK_STATUS   = TRUE
 
   APRIORI DXE {
+    INF MdeModulePkg/Core/Dxe/DxeMain.inf
+
     INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
+    INF MdeModulePkg/Universal/ReportStatusCodeRouter/RuntimeDxe/ReportStatusCodeRouterRuntimeDxe.inf
+    INF MdeModulePkg/Universal/StatusCodeHandler/RuntimeDxe/StatusCodeHandlerRuntimeDxe.inf
+    INF MdeModulePkg/Core/RuntimeDxe/RuntimeDxe.inf
+    INF ArmPkg/Drivers/CpuDxe/CpuDxe.inf
+    INF ArmPkg/Drivers/ArmGic/ArmGicDxe.inf
+    INF ArmPkg/Drivers/TimerDxe/TimerDxe.inf
+    INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
+
+    INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
+
+    INF MdeModulePkg/Universal/Disk/DiskIoDxe/DiskIoDxe.inf
+    INF MdeModulePkg/Universal/Disk/PartitionDxe/PartitionDxe.inf
+
+    INF FatPkg/EnhancedFatDxe/Fat.inf
+    INF MdeModulePkg/Universal/Disk/UnicodeCollation/EnglishDxe/EnglishDxe.inf
+    INF MdeModulePkg/Universal/FvSimpleFileSystemDxe/FvSimpleFileSystemDxe.inf
+
+	INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
+	INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
+	INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
+
+	INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
+	INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
+	INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
+	INF MdeModulePkg/Universal/HiiDatabaseDxe/HiiDatabaseDxe.inf
+
   }
 
   INF MdeModulePkg/Core/Dxe/DxeMain.inf
@@ -137,6 +165,12 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/WatchdogTimerDxe/WatchdogTimer.inf
 
   INF MdeModulePkg/Universal/PCD/Dxe/Pcd.inf
+  
+  FILE DRIVER = 3299a266-15f0-4346-8318-716336736d3e {
+    SECTION DXE_DEPEX = GM1900/Prebuilt/UsbDeviceDxe/UsbDeviceDxe.depex
+    SECTION PE32 = GM1900/Prebuilt/UsbDeviceDxe/UsbDeviceDxe.efi
+    SECTION UI = "UsbDeviceDxe"
+  }
 
   #
   # GPIO
@@ -150,6 +184,32 @@ READ_LOCK_STATUS   = TRUE
   INF GM1900/Drivers/GM1900Dxe/GM1900Dxe.inf
   INF GM1900/Drivers/SimpleFbDxe/SimpleFbDxe.inf
   INF GM1900/Drivers/LogoDxe/LogoDxe.inf
+  
+  
+  FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {
+    SECTION DXE_DEPEX = GM1900/Prebuilt/UFSDxe/UFSDxe.depex
+    SECTION PE32 = GM1900/Prebuilt/UFSDxe/UFSDxe.efi
+    SECTION UI = "UFSDxe"
+  }
+
+
+  FILE DRIVER = 7a32bd23-f735-4f57-aa1a-447d2fe3be0d {
+    SECTION DXE_DEPEX = GM1900/Prebuilt/SPI/SPI.depex
+    SECTION PE32 = GM1900/Prebuilt/SPI/SPI.efi
+    SECTION UI = "SPI"
+  }
+
+    FILE DRIVER = 2a7b4bef-80cd-49e1-b473-374ba4d673fc {
+      SECTION DXE_DEPEX = GM1900/Prebuilt/SPMI/SPMI.depex
+      SECTION PE32 = GM1900/Prebuilt/SPMI/SPMI.efi
+      SECTION UI = "SPMI"
+    }
+
+  FILE DRIVER = f541d663-4a48-40aa-aabf-ff158ccae34c {
+    SECTION DXE_DEPEX = GM1900/Prebuilt/SmemDxe/SmemDxe.depex
+    SECTION PE32 = GM1900/Prebuilt/SmemDxe/SmemDxe.efi
+    SECTION UI = "SmemDxe"
+  }
 
 
   #
@@ -231,6 +291,8 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/DisplayEngineDxe/DisplayEngineDxe.inf
   INF MdeModulePkg/Universal/BdsDxe/BdsDxe.inf
   INF MdeModulePkg/Application/UiApp/UiApp.inf
+  
+  
 
 [FV.FVMAIN_COMPACT]
 FvAlignment        = 8
