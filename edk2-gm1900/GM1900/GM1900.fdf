@@ -150,6 +150,30 @@ READ_LOCK_STATUS   = TRUE
   INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
   INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
 
+  FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
+    SECTION PE32 = GM1900/Prebuilt/I2C/I2C.efi
+    SECTION DXE_DEPEX = GM1900/Prebuilt/I2C/I2C.depex
+    SECTION UI = "I2C"
+  }
+
+  FILE DRIVER = af9763a2-033b-4109-8e17-56a98d380c92 {
+    SECTION PE32 = GM1900/Prebuilt/HWIODxeDriver/HWIODxeDriver.efi
+    SECTION DXE_DEPEX = GM1900/Prebuilt/HWIODxeDriver/HWIODxeDriver.depex
+    SECTION UI = "HWIODxeDriver"
+  }
+
+  FILE DRIVER = 5776232e-082d-4b75-9a0e-fe1d13f7a5d9 {
+    SECTION DXE_DEPEX = GM1900/Prebuilt/PmicDxe/PmicDxe.depex
+    SECTION PE32 = GM1900/Prebuilt/PmicDxe/PmicDxe.efi
+    SECTION UI = "PmicDxe"
+  }
+
+  FILE DRIVER = 5bd181db-0487-4f1a-ae73-820e165611b3 {
+    SECTION DXE_DEPEX = GM1900/Prebuilt/ButtonsDxe/ButtonsDxe.depex
+    SECTION PE32 = GM1900/Prebuilt/ButtonsDxe/ButtonsDxe.efi
+    SECTION UI = "ButtonsDxe"
+  }
+
   #
   # Multiple Console IO support
   #
@@ -208,6 +232,7 @@ READ_LOCK_STATUS   = TRUE
   INF GM1900/Drivers/GM1900Dxe/GM1900Dxe.inf
   INF GM1900/Drivers/SimpleFbDxe/SimpleFbDxe.inf
   INF GM1900/Drivers/LogoDxe/LogoDxe.inf
+  INF GM1900/Drivers/KeypadDxe/KeypadDxe.inf
   
   
   FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {

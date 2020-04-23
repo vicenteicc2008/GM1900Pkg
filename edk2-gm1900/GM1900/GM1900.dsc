@@ -97,11 +97,11 @@
 
   gEfiMdeModulePkgTokenSpaceGuid.PcdFirmwareVersionString|L"Fuck"
 
-  # System Memory (4GB)
+  # System Memory (7GB)
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
-  gArmTokenSpaceGuid.PcdSystemMemorySize|0xe0000000
-  
-  # We only boot one processor here!
+  gArmTokenSpaceGuid.PcdSystemMemorySize|0x1c0000000
+
+  # Trying to start 8 processors.
   gArmPlatformTokenSpaceGuid.PcdCoreCount|8
   gArmPlatformTokenSpaceGuid.PcdClusterCount|1
 
@@ -200,6 +200,7 @@
   # Virtual Keyboard
   #
   EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
+  GM1900/Drivers/KeypadDxe/KeypadDxe.inf
   
   #
   # GM1900 necessary driver execution environment
