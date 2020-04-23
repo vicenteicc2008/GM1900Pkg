@@ -526,6 +526,13 @@ UefiMain (
     //
     if (PcdGet8(PcdShellSupportLevel) >= 2 && !ShellInfoObject.ShellInitSettings.BitUnion.Bits.NoMap) {
       Status = RunCommand(L"map");
+      /*
+      for(int i=64;i<=65;i++) {
+        Size        = 200;
+        TempString  = AllocateZeroPool(Size);
+        UnicodeSPrint(TempString, Size, L"ls blk%d:", i);
+        Status = RunCommand(TempString);
+      }*/
       ASSERT_EFI_ERROR(Status);
     }
 
