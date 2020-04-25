@@ -42,8 +42,8 @@
 **/
 EFI_STATUS
 EnableQuietBoot (
-  IN  EFI_GUID  *LogoFile
-  );
+    IN  EFI_GUID  *LogoFile
+);
 
 /**
   Use SystemTable Conout to turn on video based Simple Text Out consoles. The
@@ -54,7 +54,7 @@ EnableQuietBoot (
 **/
 EFI_STATUS
 DisableQuietBoot (
-  VOID
-  );
+    VOID
+);
 
 #endif // _PLATFORM_BM_H_

@@ -46,7 +46,7 @@
   BootLogoLib|MdeModulePkg/Library/BootLogoLib/BootLogoLib.inf
 
   SerialPortLib|GM1900/Library/InMemorySerialPortLib/InMemorySerialPortLib.inf
-  RealTimeClockLib|EmbeddedPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf
+ # RealTimeClockLib|EmbeddedPkg/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf
   TimeBaseLib|EmbeddedPkg/Library/TimeBaseLib/TimeBaseLib.inf
 
   # USB Requirements
@@ -69,6 +69,8 @@
   
   # custom implementation
   SerialPortLib|GM1900/Library/FrameBufferSerialPortLib/FrameBufferSerialPortLib.inf
+  MallocLib|GM1900/Library/MallocLib/MallocLib.inf
+  InterruptsLib|GM1900/Library/InterruptsLib/InterruptsLib.inf
 
 [LibraryClasses.common.SEC]
   PrePiLib|EmbeddedPkg/Library/PrePiLib/PrePiLib.inf
@@ -101,8 +103,8 @@
   gArmTokenSpaceGuid.PcdSystemMemoryBase|0x80000000
   gArmTokenSpaceGuid.PcdSystemMemorySize|0x1c0000000
 
-  # Trying to start 8 processors.
-  gArmPlatformTokenSpaceGuid.PcdCoreCount|8
+  # We just need 1 core
+  gArmPlatformTokenSpaceGuid.PcdCoreCount|1
   gArmPlatformTokenSpaceGuid.PcdClusterCount|1
 
   #
@@ -172,7 +174,10 @@
   MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
   EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
   MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
-  EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
+  EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf {
+    <LibraryClasses>
+	  RealTimeClockLib|GM1900/Library/VirtualRealTimeClockLib/VirtualRealTimeClockLib.inf
+  }
   EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
 
   MdeModulePkg/Universal/Console/ConPlatformDxe/ConPlatformDxe.inf
@@ -195,12 +200,16 @@
   #
   # GPIO
   #
+  
+  
+  # Device Drivers
+  GM1900/Drivers/SynapticsTouchDxe/SynapticsTouchDevice.inf
+  GM1900/Drivers/SynapticsTouchDxe/SynapticsTouchDxe.inf
 
   #
   # Virtual Keyboard
   #
   EmbeddedPkg/Drivers/VirtualKeyboardDxe/VirtualKeyboardDxe.inf
-  GM1900/Drivers/KeypadDxe/KeypadDxe.inf
   
   #
   # GM1900 necessary driver execution environment

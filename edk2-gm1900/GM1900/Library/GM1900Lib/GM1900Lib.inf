@@ -24,6 +24,7 @@
   EmbeddedPkg/EmbeddedPkg.dec
   MdePkg/MdePkg.dec
   MdeModulePkg/MdeModulePkg.dec
+  GM1900/GM1900.dec
 
 [LibraryClasses]
   ArmLib

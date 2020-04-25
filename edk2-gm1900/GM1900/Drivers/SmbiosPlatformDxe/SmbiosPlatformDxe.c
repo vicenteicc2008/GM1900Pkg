@@ -625,7 +625,7 @@ STATIC CONST ARM_TYPE16 mArmDefaultType16 = {
         MemoryArrayLocationSystemBoard, //on motherboard
         MemoryArrayUseSystemMemory,     //system RAM
         MemoryErrorCorrectionNone,      //Juno doesn't have ECC RAM
-        0x800000, //8GB
+        0x700000, //7GB
         0xFFFE,   //No error information structure
         0x1,      //soldered memory
     },

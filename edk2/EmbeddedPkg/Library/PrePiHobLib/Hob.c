@@ -755,6 +755,7 @@ BuildMemoryAllocationHob (
   IN EFI_MEMORY_TYPE             MemoryType
   )
 {
+	//This is the place where I crashed.
   EFI_HOB_MEMORY_ALLOCATION  *Hob;
 
   ASSERT (((BaseAddress & (EFI_PAGE_SIZE - 1)) == 0) &&

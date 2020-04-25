@@ -1,0 +1,26 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = VirtualRealTimeClockLib
+  FILE_GUID                      = 1E27D461-78F3-4F7D-B1C2-F72384F13A6E
+  MODULE_TYPE                    = BASE
+  VERSION_STRING                 = 1.0
+  LIBRARY_CLASS                  = RealTimeClockLib
+
+[Sources.common]
+  VirtualRealTimeClockLib.c
+
+[Packages]
+  ArmPkg/ArmPkg.dec
+  MdePkg/MdePkg.dec
+  EmbeddedPkg/EmbeddedPkg.dec
+  GM1900/GM1900.dec
+
+[LibraryClasses]
+  IoLib
+  DebugLib
+  TimerLib
+  TimeBaseLib
+  UefiRuntimeLib
+
+[Pcd]
+  gGM1900TokenSpaceGuid.PcdRTCInf

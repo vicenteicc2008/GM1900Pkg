@@ -18,11 +18,9 @@ EFIAPI
 PlatformPeim (
     VOID
 ) {
-	//See uefiplat.cfg to find this address
-	UINT32* InfoBlockAddr = (UINT32 *)INFOBLOCK_ADDR;
-	BuildGuidDataHob (&(EFI_GUID)INFOBLOCK_GUID, &InfoBlockAddr, 8);
-
-	BuildFvHob (PcdGet64 (PcdFvBaseAddress), PcdGet32 (PcdFvSize));
-
-	return EFI_SUCCESS;
+    //See uefiplat.cfg to find this address
+    UINT32 *InfoBlockAddr = (UINT32 *)INFOBLOCK_ADDR;
+    BuildGuidDataHob (&(EFI_GUID)INFOBLOCK_GUID, &InfoBlockAddr, 8);
+    BuildFvHob (PcdGet64 (PcdFvBaseAddress), PcdGet32 (PcdFvSize));
+    return EFI_SUCCESS;
 }

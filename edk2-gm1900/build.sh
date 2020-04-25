@@ -18,7 +18,10 @@ else
 		make -C ../edk2/BaseTools -j16
 		. build_common.sh
         # en realidad no GCC 5; es GCC 7 en Ubuntu 18.04.
-        GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -s -n 6 -a AARCH64 -t GCC5 -p GM1900/GM1900.dsc
+		BUILD_DATE=`date +%m/%d/%Y`
+		BUILD_EPOCH=`date +%s`
+		COMMON_OPTS="-DBUILD_EPOCH=$BUILD_EPOCH -DBUILD_DATE=$BUILD_DATE -DBUILD_COMMIT=yourcommit56"
+        GCC5_AARCH64_PREFIX=aarch64-linux-gnu- build -s -n 6 -a AARCH64 -t GCC5 -p GM1900/GM1900.dsc $COMMON_OPTS
         gzip -c < workspace/Build/GM1900/DEBUG_GCC5/FV/GM1900_UEFI.fd >uefi.img
         cat gm1900.dtb >> uefi.img
 		#referido al script de @fxsheep

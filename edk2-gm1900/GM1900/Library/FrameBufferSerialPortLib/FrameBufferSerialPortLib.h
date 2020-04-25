@@ -12,20 +12,20 @@ typedef struct _FBCON_COLOR {
 } FBCON_COLOR, *PFBCON_COLOR;
 
 enum FbConMsgType {
-	/* type for menu */
-	FBCON_COMMON_MSG = 0,
-	FBCON_UNLOCK_TITLE_MSG,
-	FBCON_TITLE_MSG,
-	FBCON_SUBTITLE_MSG,
+    /* type for menu */
+    FBCON_COMMON_MSG = 0,
+    FBCON_UNLOCK_TITLE_MSG,
+    FBCON_TITLE_MSG,
+    FBCON_SUBTITLE_MSG,
 
-	/* type for warning */
-	FBCON_YELLOW_MSG,
-	FBCON_ORANGE_MSG,
-	FBCON_RED_MSG,
-	FBCON_GREEN_MSG,
+    /* type for warning */
+    FBCON_YELLOW_MSG,
+    FBCON_ORANGE_MSG,
+    FBCON_RED_MSG,
+    FBCON_GREEN_MSG,
 
-	/* and the select message's background */
-	FBCON_SELECT_MSG_BG_COLOR,
+    /* and the select message's background */
+    FBCON_SELECT_MSG_BG_COLOR,
 };
 
 void ResetFb(void);
@@ -34,8 +34,8 @@ UINTN
 EFIAPI
 SerialPortWriteCritical
 (
-	IN UINT8     *Buffer,
-	IN UINTN     NumberOfBytes
+    IN UINT8     *Buffer,
+    IN UINTN     NumberOfBytes
 );
 
 #endif

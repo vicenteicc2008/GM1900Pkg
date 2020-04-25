@@ -128,7 +128,8 @@ READ_LOCK_STATUS   = TRUE
 	INF EmbeddedPkg/EmbeddedMonotonicCounter/EmbeddedMonotonicCounter.inf
 	INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
 	INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
-
+	
+	
 	INF MdeModulePkg/Universal/PrintDxe/PrintDxe.inf
 	INF MdeModulePkg/Universal/DevicePathDxe/DevicePathDxe.inf
 	INF MdeModulePkg/Universal/CapsuleRuntimeDxe/CapsuleRuntimeDxe.inf
@@ -149,6 +150,12 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/ResetSystemRuntimeDxe/ResetSystemRuntimeDxe.inf
   INF EmbeddedPkg/RealTimeClockRuntimeDxe/RealTimeClockRuntimeDxe.inf
   INF EmbeddedPkg/MetronomeDxe/MetronomeDxe.inf
+  
+  FILE DRIVER = 4db5dea6-5302-4d1a-8a82-677a683b0d29 {
+    SECTION PE32 = GM1900/Prebuilt/ClockDxe/ClockDxe.efi
+    SECTION DXE_DEPEX = GM1900/Prebuilt/ClockDxe/ClockDxe.depex
+    SECTION UI = "ClockDxe"
+  }
 
   FILE DRIVER = 04de8591-d2b3-4077-bbbe-b12070094eb6 {
     SECTION PE32 = GM1900/Prebuilt/I2C/I2C.efi
@@ -219,6 +226,10 @@ READ_LOCK_STATUS   = TRUE
     SECTION PE32 = GM1900/Prebuilt/UsbConfigDxe/UsbConfigDxe.efi
     SECTION UI = "UsbDeviceDxe"
   }
+  
+  # Device Drivers
+  INF GM1900/Drivers/SynapticsTouchDxe/SynapticsTouchDevice.inf
+  INF GM1900/Drivers/SynapticsTouchDxe/SynapticsTouchDxe.inf
 
   #
   # GPIO
@@ -232,7 +243,6 @@ READ_LOCK_STATUS   = TRUE
   INF GM1900/Drivers/GM1900Dxe/GM1900Dxe.inf
   INF GM1900/Drivers/SimpleFbDxe/SimpleFbDxe.inf
   INF GM1900/Drivers/LogoDxe/LogoDxe.inf
-  INF GM1900/Drivers/KeypadDxe/KeypadDxe.inf
   
   
   FILE DRIVER = 0d35cd8e-97ea-4f9a-96af-0f0d89f76567 {
@@ -259,7 +269,6 @@ READ_LOCK_STATUS   = TRUE
     SECTION PE32 = GM1900/Prebuilt/SmemDxe/SmemDxe.efi
     SECTION UI = "SmemDxe"
   }
-
 
   #
   # USB Host Support
@@ -300,7 +309,7 @@ READ_LOCK_STATUS   = TRUE
   INF MdeModulePkg/Universal/Acpi/AcpiPlatformDxe/AcpiPlatformDxe.inf
   INF MdeModulePkg/Universal/Acpi/BootGraphicsResourceTableDxe/BootGraphicsResourceTableDxe.inf
   
-  FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
+ FILE FREEFORM = 7E374E25-8E01-4FEE-87F2-390C23C606CD {
 	SECTION RAW = GM1900/AcpiTables/APIC.aml
 	SECTION RAW = GM1900/AcpiTables/BGRT.aml
 	SECTION RAW = GM1900/AcpiTables/CSRT.aml
@@ -316,7 +325,7 @@ READ_LOCK_STATUS   = TRUE
 	SECTION RAW = GM1900/AcpiTables/TPM2.aml
 	SECTION RAW = GM1900/AcpiTables/XSDT.aml
 	SECTION UI = "AcpiTables"
-  }
+ }
 
   #
   # SMBIOS Support
